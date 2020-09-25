@@ -19,5 +19,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
-# Inherit full common CesiumOS stuff
-$(call inherit-product, vendor/cesium/config/common_full.mk)
+# Inherit full common KowalskiOS stuff
+$(call inherit-product, vendor/kowalski/config/common_full.mk)

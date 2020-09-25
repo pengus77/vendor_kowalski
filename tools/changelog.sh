@@ -7,7 +7,7 @@ then
 	rm -f $Changelog
 fi
 
-export formatter_script=$(realpath vendor/cesium/tools/changelog_repo_formatter.sh)
+export formatter_script=$(realpath vendor/kowalski/tools/changelog_repo_formatter.sh)
 
 touch $Changelog
 

@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func cesiumExpandVariables(ctx android.ModuleContext, in string) string {
-	cesiumVars := ctx.Config().VendorConfig("cesiumVarsPlugin")
+func kowalskiExpandVariables(ctx android.ModuleContext, in string) string {
+	kowalskiVars := ctx.Config().VendorConfig("kowalskiVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if cesiumVars.IsSet(name) {
-			return cesiumVars.String(name), nil
+		if kowalskiVars.IsSet(name) {
+			return kowalskiVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

@@ -1,4 +1,4 @@
-# Inherit common CesiumOS stuff
-$(call inherit-product, vendor/cesium/config/common.mk)
+# Inherit common KowalskiOS stuff
+$(call inherit-product, vendor/kowalski/config/common.mk)
 
 PRODUCT_SIZE := full

@@ -1,14 +1,14 @@
 bootstrap_go_package {
-    name: "soong-cesium",
-    pkgPath: "cesium/soong/android",
+    name: "soong-kowalski",
+    pkgPath: "kowalski/soong/android",
     srcs: [
         "android/variable.go",
     ],
 }
 
 bootstrap_go_package {
-    name: "soong-cesium-generator",
-    pkgPath: "cesium/soong/generator",
+    name: "soong-kowalski-generator",
+    pkgPath: "kowalski/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -23,7 +23,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-cesium_generator {
+kowalski_generator {
     name: "generated_kernel_includes",
 
     // The headers make command

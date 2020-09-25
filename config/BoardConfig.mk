@@ -1,10 +1,10 @@
-include vendor/cesium/config/BoardConfigKernel.mk
+include vendor/kowalski/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/cesium/config/BoardConfigQcom.mk
+include vendor/kowalski/config/BoardConfigQcom.mk
 endif
 
-include vendor/cesium/config/BoardConfigSoong.mk
+include vendor/kowalski/config/BoardConfigSoong.mk
 
 ifneq ($(TARGET_USES_PREBUILT_CAMERA_SERVICE), true)
 PRODUCT_SOONG_NAMESPACES += \

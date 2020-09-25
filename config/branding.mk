@@ -1,5 +1,5 @@
 # Versioning System
-CESIUM_VERSION := v3.0
+KOWALSKI_VERSION := v1.0
 
 ifneq ($(SIGNING_KEYS),)
     PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
@@ -18,14 +18,14 @@ CUSTOM_BUILD_DATE := $(CUSTOM_DATE_YEAR)$(CUSTOM_DATE_MONTH)$(CUSTOM_DATE_DAY)-$
 
 CUSTOM_PLATFORM_VERSION := 11.0
 
-TARGET_PRODUCT_SHORT := $(subst cesium_,,$(CUSTOM_BUILD))
+TARGET_PRODUCT_SHORT := $(subst kowalski_,,$(CUSTOM_BUILD))
 
-CESIUM_MOD_VERSION := CesiumOS-$(CESIUM_VERSION)-$(CUSTOM_BUILD)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
+KOWALSKI_MOD_VERSION := KowalskiOS-$(KOWALSKI_VERSION)-$(CUSTOM_BUILD)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
 CUSTOM_VERSION_PROP := 11
 
 CUSTOM_PROPERTIES := \
-    org.cesium.version=$(CUSTOM_VERSION_PROP) \
-    org.cesium.build_date=$(CUSTOM_BUILD_DATE) \
-    org.cesium.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.cesium.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.cesium.build_version=$(CESIUM_VERSION)
+    org.kowalski.version=$(CUSTOM_VERSION_PROP) \
+    org.kowalski.build_date=$(CUSTOM_BUILD_DATE) \
+    org.kowalski.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    org.kowalski.build_type=$(CUSTOM_BUILD_TYPE) \
+    org.kowalski.build_version=$(KOWALSKI_VERSION)

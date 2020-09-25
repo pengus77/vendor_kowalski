@@ -42,11 +42,11 @@ except ImportError:
 
 DEBUG = False
 
-custom_local_manifest = ".repo/local_manifests/cesium.xml"
+custom_local_manifest = ".repo/local_manifests/kowalski.xml"
 custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'ten')
-custom_dependencies = "cesium.dependencies"
-org_manifest = "cesium-devices"  # leave empty if org is provided in manifest
-org_display = "Cesium-Devices"  # needed for displaying
+custom_dependencies = "kowalski.dependencies"
+org_manifest = "kowalski-devices"  # leave empty if org is provided in manifest
+org_display = "Kowalski-Devices"  # needed for displaying
 
 github_auth = None
 

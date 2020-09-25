@@ -4,6 +4,6 @@ PRODUCT_PACKAGES += \
     Updater
 
 PRODUCT_COPY_FILES += \
-    vendor/cesium/config/permissions/org.cesium.ota.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.cesium.ota.xml
+    vendor/kowalski/config/permissions/org.kowalski.ota.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.kowalski.ota.xml
 
 endif

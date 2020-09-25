@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= CesiumOS
+PRODUCT_BRAND ?= KowalskiOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -43,9 +43,9 @@ PRODUCT_PACKAGES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/cesium/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/cesium/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/cesium/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
+    vendor/kowalski/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/kowalski/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/kowalski/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
 
 # OTA
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -55,32 +55,32 @@ endif
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
-    vendor/cesium/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/cesium/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/cesium/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/kowalski/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/kowalski/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/kowalski/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Some permissions
 PRODUCT_COPY_FILES += \
-    vendor/cesium/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml \
-    vendor/cesium/config/permissions/privapp-permissions-fm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-fm.xml \
-    vendor/cesium/config/permissions/privapp-permissions-snap.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-snap.xml \
-    vendor/cesium/config/permissions/privapp-permissions-cesium-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-cesium-system.xml \
-    vendor/cesium/config/permissions/privapp-permissions-camera2.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-camera2.xml \
-    vendor/cesium/config/permissions/privapp-permissions-cesium-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-cesium-product.xml \
-    vendor/cesium/config/permissions/privapp-permissions-google_prebuilt.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google_prebuilt.xml
+    vendor/kowalski/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-fm.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-fm.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-snap.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-snap.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-kowalski-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-kowalski-system.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-camera2.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-camera2.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-kowalski-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-kowalski-product.xml \
+    vendor/kowalski/config/permissions/privapp-permissions-google_prebuilt.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google_prebuilt.xml
 
 # Copy all custom init rc files
-$(foreach f,$(wildcard vendor/cesium/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/kowalski/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/cesium/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
+    vendor/kowalski/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/cesium/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/kowalski/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -102,7 +102,7 @@ endif
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cesium/config/permissions/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
+    vendor/kowalski/config/permissions/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -133,8 +133,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/cesium/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/cesium/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/kowalski/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/kowalski/overlay/common
 
 # PixelSetupWizard overlay
 PRODUCT_PACKAGES += \
@@ -176,7 +176,6 @@ PRODUCT_PACKAGES += \
     StitchImage
 
 # Face Unlock
-ifeq ($(CUSTOM_BUILD_TYPE), OFFICIAL)
 TARGET_FACE_UNLOCK_SUPPORTED := false
 ifeq (,$(filter $(TARGET_ARCH), arm64))
 ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
@@ -187,15 +186,14 @@ endif
 endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
-endif
 
 # Branding
-include vendor/cesium/config/branding.mk
+include vendor/kowalski/config/branding.mk
 
 # OTA
-include vendor/cesium/config/ota.mk
+include vendor/kowalski/config/ota.mk
 
-# Cesium Prebuilts
-include vendor/cesium-prebuilts/config.mk
+# Kowalski Prebuilts
+include vendor/kowalski-prebuilts/config.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
