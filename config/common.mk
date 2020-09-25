@@ -193,7 +193,4 @@ include vendor/kowalski/config/branding.mk
 # OTA
 include vendor/kowalski/config/ota.mk
 
-# Kowalski Prebuilts
-include vendor/kowalski-prebuilts/config.mk
-
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
