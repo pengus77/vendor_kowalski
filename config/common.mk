@@ -175,6 +175,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StitchImage
 
+# Theme Picker
+PRODUCT_PACKAGES += \
+    ThemePicker
+
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := false
 ifeq (,$(filter $(TARGET_ARCH), arm64))
