@@ -33,7 +33,7 @@ endif
 # ThemePicker
 PRODUCT_PACKAGES += \
     ThemePicker \
-    CesiumThemesStub
+    KowalskiThemesStub
 
 # WallBucket
 PRODUCT_PACKAGES += \
