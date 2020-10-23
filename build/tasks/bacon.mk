@@ -19,6 +19,6 @@ CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(KOWALSKI_MOD_VERSION).zip
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5
 	$(hide) ./vendor/kowalski/tools/generate_json_build_info.sh $(CUSTOM_TARGET_PACKAGE)
 	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
