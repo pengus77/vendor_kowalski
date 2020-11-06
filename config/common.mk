@@ -203,4 +203,7 @@ include vendor/kowalski/config/branding.mk
 # OTA
 include vendor/kowalski/config/ota.mk
 
+# Themes
+include vendor/kowalski/themes/kowalski_themes.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
