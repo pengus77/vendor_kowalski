@@ -30,6 +30,11 @@ else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# Default notification/alarm sounds
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.notification_sound=Ceres.ogg \
+    ro.config.alarm_alert=Argon.ogg
+
 # ThemePicker
 PRODUCT_PACKAGES += \
     ThemePicker \

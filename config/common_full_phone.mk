@@ -19,5 +19,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
+# Default ringtone
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.ringtone=Phobos.ogg
+
 # Inherit full common KowalskiOS stuff
 $(call inherit-product, vendor/kowalski/config/common_full.mk)
