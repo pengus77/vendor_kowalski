@@ -44,4 +44,6 @@
     <!-- If this is true, long press on power button will be available from a
          non-interactive state. -->
     <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>
+
+    <string name="config_dozeComponent">com.custom.ambient.display/com.custom.ambient.display.DozeSettings</string>
 </resources>

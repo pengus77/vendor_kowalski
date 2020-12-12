@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     Terminal
 
+# CustomDoze
+PRODUCT_PACKAGES += \
+    CustomDoze
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/kowalski/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
