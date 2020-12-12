@@ -1,5 +1,5 @@
 # Versioning System
-KOWALSKI_VERSION := v1.0
+KOWALSKI_VERSION ?= v1.0
 
 ifneq ($(SIGNING_KEYS),)
     PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
