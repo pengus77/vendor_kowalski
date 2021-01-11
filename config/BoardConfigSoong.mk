@@ -21,6 +21,14 @@ EXPORT_TO_SOONG := \
 
 SOONG_CONFIG_NAMESPACES += kowalskiVarsPlugin
 
+SOONG_CONFIG_NAMESPACES += kowalskiQcomVars
+SOONG_CONFIG_kowalskiQcomVars += \
+    uses_pre_uplink_features_netmgrd \
+    uses_qti_camera_device
+
+SOONG_CONFIG_kowalskiQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
+SOONG_CONFIG_kowalskiQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+
 SOONG_CONFIG_kowalskiVarsPlugin :=
 
 define addVar
